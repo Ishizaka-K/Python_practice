@@ -25,6 +25,9 @@ def convert_webp_to_jpeg(input_folder):
             # その他の画像形式も追加
             jpeg_images.append(old_file_path)
         
+        # スペースがあった場合にファイル名をリネーム
+        if filename != new_filename:
+            os.rename(old_file_path, new_file_path)
     
     return jpeg_images
 
